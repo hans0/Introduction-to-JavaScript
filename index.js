@@ -17,6 +17,10 @@ Do the following:
 
    HINT: no function required
 */
+let votingAge = 21;
+if (votingAge >= 18){
+  console.log(true);
+}
 
 
 
@@ -30,7 +34,12 @@ Do the following:
 
    HINT: no function required
 */
-
+let x = 5;
+let y = 6;
+if (y === 6){
+  y = 5;
+}
+console.log(y);
 
 
 
@@ -45,7 +54,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+  let yearString = "1999";
+  yearString=Number(yearString);
+  console.log(yearString);
 
 
 
@@ -75,8 +86,9 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
+function dogYears(humanYears){
     /*add your code here*/
+    return humanYears * 7;
 }
 
 
@@ -108,8 +120,25 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(lbs, age){
+    /* Puppy */
+    if (age >= (2/12) && age < (4/12)){
+      return lbs * 0.1;
+    } else if (age >= (4/12) && age < (7/12)){
+      return lbs * 0.05;
+    } else if (age >= (7/12) && age < 1) {
+      return lbs * 0.04;
+    }
+    /* Not a puppy */
+    if (lbs <= 5) {
+      return lbs * 0.05;
+    } else if (lbs >= 6 && lbs <= 10) {
+      return lbs * 0.04;
+    } else if (lbs >= 11 && lbs <= 15) {
+      return lbs * 0.03;
+    }
+    // if lbs > 15
+    return lbs * 0.02;
   }
 
 
@@ -134,9 +163,20 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let RPS = ['Rock', 'Paper', 'Scissors']
+let computerChoice = RPS[Math.random() * 2];
 
 function game(user, computer){
     /*add your code here*/
+    if (user === computer){
+      return "it's a tie";
+    } else if (
+      (user === 'paper' && computer === 'rock') ||
+      (user === 'rock' && computer == 'scissors') ||
+      (user === 'scissors' && computer === 'paper')){
+      return 'you win!';
+    }
+    return 'you lose!';
 }
   
   
@@ -152,8 +192,10 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
+function miles(km){
     /*add your code here*/
+    const km_to_miles = 0.621371;
+    return km * km_to_miles;
   }
 
 
@@ -166,8 +208,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
+function feet(cm){
     /*add your code here*/
+    const cm_to_feet = 30.48;
+    return cm / cm_to_feet;
   }
  
 
@@ -182,8 +226,10 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
+function annoyingSong(num){
         /*add your code here*/
+        let arr = [num, " bottles of soda on the wall, ", num, " bottles of soda, take one down pass it around ", num-1, " bottles of soda on the wall"];
+        return arr.join("");
   }
 
 
@@ -204,6 +250,18 @@ Using the grade function below do the following:
   
 function grade(grade){
   /*Your Code here */
+  if (grade >= 90){
+    return 'you got an A';
+  } else if (grade >= 80){
+    return 'you got a B';
+  } else if (grade >= 70){
+    return 'you got a C';
+  } else if (grade >= 60){
+    return 'you got a D';
+  }
+  // else if grade < 59
+  return 'you got an F';
+  
 }
   
 console.log('grade function', grade(85));
@@ -223,8 +281,16 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
+function vowelCounter(word) {
     /*add your code here*/
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    let counter = 0;
+    for(let i = 0; i < word.length; i++) {
+      if (word[i].includes(vowels)){
+        counter++
+      }
+    }
+    return counter;
 }
 
 
