@@ -202,11 +202,11 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
+function grade(grade){
   /*Your Code here */
 }
   
-  console.log('grade function', grade(85));
+console.log('grade function', grade(85));
   
   
 
