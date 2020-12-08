@@ -210,8 +210,8 @@ Using the feet function below do the following:
 
 function feet(cm){
     /*add your code here*/
-    const cm_to_feet = 30.48;
-    return cm / cm_to_feet;
+    const cm_in_foot = 30.48;
+    return cm / cm_in_foot;
   }
  
 
